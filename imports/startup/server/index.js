@@ -22,6 +22,4 @@ const schema = makeExecutableSchema({
   resolvers
 })
 
-createApolloServer({
-  schema
-});
+createApolloServer({ schema });
