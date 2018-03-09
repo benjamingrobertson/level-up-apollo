@@ -12,7 +12,7 @@ type Query {
 }
 `;
 
-
+// hi there
 
 // Schema
 const typeDefs = [

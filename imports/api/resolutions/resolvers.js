@@ -15,11 +15,13 @@ export default {
   },
 
   Mutation: {
-    createResolution() {
-      console.log('got here');
-      // const resolutionId = Resolutions.insert({
-      //   name: "Test Resolution"
-      // });
+    createResolution(object, { name }, context) {
+
+      const resolutionId = Resolutions.insert({
+        name
+      });
+
+      return Resolutions.findOne(resolutionId);
     }
   }
 };
