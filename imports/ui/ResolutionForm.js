@@ -27,5 +27,5 @@ class ResolutionForm extends Component {
 }
 
 export default graphql(createResolution, {
-  name: 'createResolution'
+  name: 'createResolution' // adds the mutation to this.props
 })(ResolutionForm)
