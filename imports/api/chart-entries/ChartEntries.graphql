@@ -1,0 +1,45 @@
+# name
+# createdAt
+# [todoId]
+
+scalar Date
+
+enum Flow {
+  VL
+  L
+  M
+  H
+  B
+}
+
+enum Qualities {
+  brown
+  cloudy
+  cloudy_clear
+  gummy
+  clear
+  lubricative
+  pasty
+  yellow
+}
+
+enum Frequency {
+  1
+  2
+  3
+  AD
+}
+
+type ChartEntry {
+  _id: String!
+  date: Date!
+  number: Int!
+  flow: Flow
+  qualities: [Qualities]!
+  frequency: Frequency
+  intercourse: Boolean
+}
+
+type Mutation {
+  createChartEntry(date: Date!, number: Int!): ChartEntry
+}
