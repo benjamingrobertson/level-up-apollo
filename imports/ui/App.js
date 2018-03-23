@@ -3,11 +3,17 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 import ResolutionForm from './ResolutionForm';
+import RegisterForm from './RegisterForm';
+import LoginForm from './LoginForm';
+
+console.log(Accounts);
 
 const App = ({ loading, resolutions }) => {
   if (loading) return null;
   return (
     <div>
+      <RegisterForm />
+      <LoginForm />
       <ResolutionForm />
       <ul>
         {resolutions.map(resolution => (
