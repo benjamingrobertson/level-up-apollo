@@ -9,8 +9,11 @@ console.log(res);
 
 export default {
   Query: {
-    resolutions() {
-      return Resolutions.find({}).fetch();
+    resolutions(object, arguments, {userId}) {
+      console.log(userId);
+      return Resolutions.find({
+        userId
+      }).fetch();
     }
   },
 
