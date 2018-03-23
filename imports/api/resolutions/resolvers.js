@@ -10,7 +10,11 @@ console.log(res);
 export default {
   Query: {
     resolutions(object, arguments, {userId}) {
-      console.log(userId);
+
+      if (userId === undefined) {
+        userId = null;
+      }
+
       return Resolutions.find({
         userId
       }).fetch();
@@ -18,10 +22,11 @@ export default {
   },
 
   Mutation: {
-    createResolution(object, { name }, context) {
+    createResolution(object, { name }, {userId}) {
 
       const resolutionId = Resolutions.insert({
-        name
+        name,
+        userId
       });
 
       return Resolutions.findOne(resolutionId);
