@@ -23,23 +23,23 @@ enum Qualities {
   yellow
 }
 
-enum Frequency {
-  1
-  2
-  3
-  AD
-}
+# enum Frequency {
+#   1
+#   2
+#   3
+#   AD
+# }
 
 type ChartEntry {
   _id: String!
   date: Date!
-  number: Int!
+  consistency: Int!
   flow: Flow
-  qualities: [Qualities]!
-  frequency: Frequency
+  qualities: [Qualities]
+  frequency: Int
   intercourse: Boolean
 }
 
 type Mutation {
-  createChartEntry(date: Date!, number: Int!): ChartEntry
+  createChartEntry(date: Date!, consistency: Int!): ChartEntry
 }

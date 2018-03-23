@@ -15,11 +15,11 @@ export default {
   },
 
   Mutation: {
-    createChartEntry(object, { date, length }, context) {
-      console.log('create Chart entry: ', date, length)
+    createChartEntry(object, { date, consistency }, context) {
+      console.log('create Chart entry: ', date, consistency)
       const entryId = ChartEntries.insert({
         date,
-        length
+        consistency
       });
 
       return ChartEntries.findOne(entryId);
