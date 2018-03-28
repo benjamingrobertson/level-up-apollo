@@ -9,7 +9,7 @@ console.log(res);
 
 export default {
   Query: {
-    ChartEntries() {
+    chartEntries() {
       return ChartEntries.find({}).fetch();
     }
   },

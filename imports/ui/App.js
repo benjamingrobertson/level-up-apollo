@@ -4,31 +4,29 @@ import { graphql } from 'react-apollo';
 
 import ChartEntryForm from './ChartEntryForm';
 
-const App = ({ data }) => {
-  // if (data.loading) return null;
+const App = ({ loading, chartEntries }) => {
+  if (loading) return null;
   return (
     <div>
-    <h1>Charting</h1>
-    <ChartEntryForm refetch={data.refetch}/>
-    {/* <ul>
-      {data.resolutions.map(resolution => (
-        <li key={resolution._id}>{resolution.name}</li>
-      ))}
-    </ul> */}
-  </div>
+      <h1>Charting</h1>
+      <ChartEntryForm />
+      <ul>
+        {chartEntries.map(chartEntry => (
+          <li key={chartEntry._id}>{chartEntry._id}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
-const hiQuery = gql`
-{
-  hi
-  resolutions {
-    _id
-    name
+const chartEntriesQuery = gql`
+  query chartEntries {
+    chartEntries {
+      _id
+    }
   }
-}
 `;
 
-export default graphql(
-  hiQuery
-)(App);
+export default graphql(chartEntriesQuery, {
+  props: ({ data }) => ({ ...data })
+})(App);

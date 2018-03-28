@@ -8,11 +8,11 @@ import ChartEntriesResolvers from '../../api/chart-entries/resolvers';
 const testSchema = `
 type Query {
   hi: String
-  ChartEntries: [ChartEntry]
+  chartEntries: [ChartEntry]
 }
 `;
 
-// test again here
+// test again here test
 
 // Schema
 const typeDefs = [
