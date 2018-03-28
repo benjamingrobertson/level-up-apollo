@@ -22,8 +22,6 @@ class ChartEntryForm extends Component {
         frequency: this.frequency.value,
         intercourse: this.intercourse.value
       }
-    }).then(({data}) => {
-      this.props.refetch();
     }).catch(error => {
       console.log(error);
     });
@@ -34,7 +32,7 @@ class ChartEntryForm extends Component {
       <div>
         <div>
           <label htmlFor="entry-date">Date</label>
-          <input type="date" name="entry-date" id="entry-date" ref={(input) => (this.date = input)}/>
+          <input type="date" name="entry-date" id="entry-date" ref={(input) => (this.date = input)} />
         </div>
 
         <div>
@@ -56,35 +54,35 @@ class ChartEntryForm extends Component {
         <div className="checkboxes">
           {this.quality = []}
           <label htmlFor="quality-brown">
-            <input ref={(input) => (this.quality.brown = input)} type="checkbox" name="quality-brown" id="quality-brown"/>
+            <input ref={(input) => (this.quality.brown = input)} type="checkbox" name="quality-brown" id="quality-brown" />
             <span>Brown</span>
           </label>
           <label htmlFor="quality-cloudy">
-            <input ref={(input) => (this.quality.cloudy = input)} type="checkbox" name="quality-cloudy" id="quality-cloudy"/>
+            <input ref={(input) => (this.quality.cloudy = input)} type="checkbox" name="quality-cloudy" id="quality-cloudy" />
             <span>Cloudy</span>
           </label>
           <label htmlFor="quality-cloudy-clear">
-            <input ref={(input) => (this.quality.cloudyClear = input)} type="checkbox" name="quality-cloudy-clear" id="quality-cloudy-clear"/>
+            <input ref={(input) => (this.quality.cloudyClear = input)} type="checkbox" name="quality-cloudy-clear" id="quality-cloudy-clear" />
             <span>Cloudy Clear</span>
           </label>
           <label htmlFor="quality-gummy">
-            <input ref={(input) => (this.quality.gummy = input)} type="checkbox" name="quality-gummy" id="quality-gummy"/>
+            <input ref={(input) => (this.quality.gummy = input)} type="checkbox" name="quality-gummy" id="quality-gummy" />
             <span>Gummy</span>
           </label>
           <label htmlFor="quality-clear">
-            <input ref={(input) => (this.quality.clear = input)} type="checkbox" name="quality-clear" id="quality-clear"/>
+            <input ref={(input) => (this.quality.clear = input)} type="checkbox" name="quality-clear" id="quality-clear" />
             <span>Clear</span>
           </label>
           <label htmlFor="quality-lubricative">
-            <input ref={(input) => (this.quality.lubricative = input)} type="checkbox" name="quality-lubricative" id="quality-lubricative"/>
+            <input ref={(input) => (this.quality.lubricative = input)} type="checkbox" name="quality-lubricative" id="quality-lubricative" />
             <span>Lubricative</span>
           </label>
           <label htmlFor="quality-pasty">
-            <input ref={(input) => (this.quality.pasty = input)} type="checkbox" name="quality-pasty" id="quality-pasty"/>
+            <input ref={(input) => (this.quality.pasty = input)} type="checkbox" name="quality-pasty" id="quality-pasty" />
             <span>Pasty</span>
           </label>
           <label htmlFor="quality-yellow">
-            <input ref={(input) => (this.quality.yellow = input)} type="checkbox" name="quality-yellow" id="quality-yellow"/>
+            <input ref={(input) => (this.quality.yellow = input)} type="checkbox" name="quality-yellow" id="quality-yellow" />
             <span>Yellow</span>
           </label>
         </div>
@@ -100,10 +98,10 @@ class ChartEntryForm extends Component {
         </div>
 
         <div>
-        <label htmlFor="intercourse">
-          <input type="checkbox" name="intercourse" id="intercourse" ref={(input) => (this.intercourse = input)}/>
-          <span>Intercourse?</span>
-        </label>
+          <label htmlFor="intercourse">
+            <input type="checkbox" name="intercourse" id="intercourse" ref={(input) => (this.intercourse = input)} />
+            <span>Intercourse?</span>
+          </label>
         </div>
 
 

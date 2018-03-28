@@ -4,6 +4,9 @@ import ChartEntries from "./chart-entries";
 //   name: "Test Res",
 // });
 
+// Drop the collection.
+ChartEntries.rawCollection().drop();
+
 const res = ChartEntries.find({}).fetch();
 console.log(res);
 

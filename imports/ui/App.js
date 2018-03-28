@@ -12,7 +12,7 @@ const App = ({ loading, chartEntries }) => {
       <ChartEntryForm />
       <ul>
         {chartEntries.map(chartEntry => (
-          <li key={chartEntry._id}>{chartEntry._id}</li>
+          <li key={chartEntry._id}>{chartEntry.date}</li>
         ))}
       </ul>
     </div>
@@ -22,7 +22,8 @@ const App = ({ loading, chartEntries }) => {
 const chartEntriesQuery = gql`
   query chartEntries {
     chartEntries {
-      _id
+      _id,
+      date
     }
   }
 `;
