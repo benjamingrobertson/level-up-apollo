@@ -5,7 +5,6 @@ import Resolutions from "./resolutions";
 // });
 
 const res = Resolutions.find({}).fetch();
-console.log(res);
 
 export default {
   Query: {
