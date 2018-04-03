@@ -7,32 +7,10 @@ import ResolutionsResolvers from '../../api/resolutions/resolvers';
 import UsersSchema from '../../api/users/User.graphql';
 import UsersResolvers from '../../api/users/resolvers';
 
-
-// test yolo
-const testSchema = `
-type Query {
-  hi: String
-  resolutions: [Resolution]
-  user: User
-}
-`;
-
 // Schema
-const typeDefs = [
-  testSchema,
-  ResolutionsSchema,
-  UsersSchema
-];
+const typeDefs = [UsersSchema, ResolutionsSchema];
 
-const testResolvers = {
-  Query: {
-    hi() {
-      return 'Hello world';
-    }
-  }
-}
-
-const resolvers = merge(testResolvers, ResolutionsResolvers, UsersResolvers);
+const resolvers = merge(ResolutionsResolvers, UsersResolvers);
 
 const schema = makeExecutableSchema({
   typeDefs,

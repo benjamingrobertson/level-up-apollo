@@ -10,3 +10,8 @@ type Resolution {
 type Mutation {
   createResolution(name: String!): Resolution
 }
+
+type Query {
+  hi: String
+  resolutions: [Resolution]
+}
