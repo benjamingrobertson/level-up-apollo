@@ -112,5 +112,8 @@ class ChartEntryForm extends Component {
 }
 
 export default graphql(createChartEntry, {
-  name: 'createChartEntry' // adds the mutation to this.props
+  name: 'createChartEntry', // adds the mutation to this.props
+  options: {
+    refetchQueries: ['ChartEntries']
+  }
 })(ChartEntryForm)
