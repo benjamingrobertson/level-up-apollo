@@ -5,6 +5,7 @@
 scalar Date
 
 enum Flow {
+  ""
   VL
   L
   M
@@ -23,23 +24,36 @@ enum Qualities {
   yellow
 }
 
-# enum Frequency {
-#   1
-#   2
-#   3
-#   AD
-# }
+enum Frequency {
+  once
+  twice
+  thrice
+  AD
+}
+
+enum Consistency {
+  dry
+  dampWoLub
+  wetWoLub
+  shinyWoLub
+  sticky
+  tacky
+  stretchy
+  dampWLub
+  shinyWLub
+  wetWLub
+}
 
 type ChartEntry {
   _id: String!
   date: Date!
-  consistency: Int!
+  consistency: Consistency!
   flow: Flow
   qualities: [Qualities]
-  frequency: Int
+  frequency: Frequency
   intercourse: Boolean
 }
 
 type Mutation {
-  createChartEntry(date: Date!, consistency: Int!): ChartEntry
+  createChartEntry(date: Date!, consistency: Consistency!, flow: Flow, qualities: [Qualities], frequency: Frequency, intercourse: Boolean): ChartEntry
 }

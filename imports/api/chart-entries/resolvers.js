@@ -5,24 +5,34 @@ import ChartEntries from "./chart-entries";
 // });
 
 // Drop the collection.
-ChartEntries.rawCollection().drop();
+// ChartEntries.rawCollection().drop();
 
 const res = ChartEntries.find({}).fetch();
 console.log(res);
 
 export default {
   Query: {
-    chartEntries() {
-      return ChartEntries.find({}).fetch();
+    chartEntries(obj, args, { userId }) {
+      if (userId === undefined) {
+        userId = null;
+      }
+      return ChartEntries.find({
+        userId
+      }).fetch();
     }
   },
 
   Mutation: {
-    createChartEntry(object, { date, consistency }, context) {
-      console.log('create Chart entry: ', date, consistency)
+    createChartEntry(object, { date, consistency, qualities, flow, frequency, intercourse }, { userId }) {
+      console.log('create Chart entry: ', date, consistency, qualities, flow, frequency, intercourse)
       const entryId = ChartEntries.insert({
         date,
-        consistency
+        consistency,
+        qualities,
+        flow,
+        frequency,
+        intercourse,
+        userId
       });
 
       return ChartEntries.findOne(entryId);
