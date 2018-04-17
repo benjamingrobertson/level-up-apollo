@@ -27,25 +27,33 @@ const App = ({ loading, resolutions, client, user }) => {
         </div>
       )}
 
-
       <ResolutionForm />
       <ul>
-        {resolutions.map(resolution => (
+        {resolutions.map((resolution) => (
           <li key={resolution._id}>
             {resolution.name}
+            <ul>
+              {resolution.goals.map((goal) => (
+                <Goal goal={goal} key={goal._id} />
+              ))}
+            </ul>
             <GoalForm resolutionId={resolution._id} />
           </li>
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 const resolutionsQuery = gql`
   query Resolutions {
     resolutions {
       _id
       name
+      goals {
+        _id
+        name
+      }
     }
     user {
       _id
