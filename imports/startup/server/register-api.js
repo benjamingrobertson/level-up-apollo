@@ -9,7 +9,7 @@ import ResolutionsResolvers from '../../api/resolutions/resolvers';
 import UsersSchema from '../../api/users/User.graphql';
 import UsersResolvers from '../../api/users/resolvers';
 
-// Schemas yo
+// Schemas
 const typeDefs = [GoalsSchema, UsersSchema, ResolutionsSchema];
 
 const resolvers = merge(GoalsResolvers, ResolutionsResolvers, UsersResolvers);
@@ -17,6 +17,6 @@ const resolvers = merge(GoalsResolvers, ResolutionsResolvers, UsersResolvers);
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers
-})
+});
 
 createApolloServer({ schema });
