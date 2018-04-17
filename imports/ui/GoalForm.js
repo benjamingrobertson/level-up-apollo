@@ -3,8 +3,8 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 const createGoal = gql`
-  mutation createGoal($name:String!, $resolutionId:String!) {
-    createGoal(name: $name, resolutionId: $resolutionId ) {
+  mutation createGoal($name: String!, $resolutionId: String!) {
+    createGoal(name: $name, resolutionId: $resolutionId) {
       _id
     }
   }
