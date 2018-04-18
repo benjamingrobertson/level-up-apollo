@@ -9,7 +9,9 @@ const res = Resolutions.find({}).fetch();
 
 export default {
   Query: {
-    resolutions(object, arguments, { userId }) {
+    resolutions(object, arguments, {
+      userId
+    }) {
       if (userId === undefined) {
         userId = null;
       }
@@ -38,13 +40,21 @@ export default {
   },
 
   Mutation: {
-    createResolution(object, { name }, { userId }) {
-      const resolutionId = Resolutions.insert({
-        name,
-        userId
-      });
+    createResolution(object, {
+      name
+    }, {
+      userId
+    }) {
+      if (userId) {
+        const resolutionId = Resolutions.insert({
+          name,
+          userId
+        });
 
-      return Resolutions.findOne(resolutionId);
+        return Resolutions.findOne(resolutionId);
+      }
+
+      throw new Error('Unauthorized');
     }
   }
 };
