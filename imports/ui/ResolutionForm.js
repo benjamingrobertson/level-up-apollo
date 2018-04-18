@@ -16,7 +16,6 @@ class ResolutionForm extends Component {
   };
 
   submitForm = () => {
-    console.log(this.name.value);
     this.props
       .createResolution({
         variables: {
