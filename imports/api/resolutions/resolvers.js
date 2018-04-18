@@ -28,11 +28,12 @@ export default {
     },
     completed: (resolution) => {
       const goals = Goals.find({
-        resolutionId: resolution._id,
-        completed: false
+        resolutionId: resolution._id
       }).fetch();
+      if (goals.length === 0) return false;
+      const completedGoals = goals.filter((goal) => goal.completed);
 
-      return !goals.length;
+      return goals.length === completedGoals.length;
     }
   },
 
