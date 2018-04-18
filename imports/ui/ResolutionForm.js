@@ -30,10 +30,18 @@ class ResolutionForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="resolution-form">
         {this.state.error && <p>{this.state.error}</p>}
-        <input type="text" ref={(input) => (this.name = input)} />
-        <button onClick={this.submitForm}>Submit</button>
+        <div className="form-group">
+          <label htmlFor="resolution">Add a new resolution</label>
+          <input
+            type="text"
+            ref={(input) => (this.name = input)}
+            id="resolution"
+          />
+        </div>
+
+        <button onClick={this.submitForm}>Add Resolution</button>
       </div>
     );
   }

@@ -1,0 +1,75 @@
+html {
+  font-family: -apple-system, system-ui, SegoeUI, Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-image: linear-gradient(to right, #7f00ff, #7f0aaa);
+  color: #fff;
+}
+
+body {
+  font-size: calc(0.8em + 1vw);
+  line-height: calc(1.4em + 1vh);
+  margin: 7.5vmin;
+  max-width: 70ch;
+  margin-top: 5em;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-size: calc(0.8em + 1vw);
+}
+
+.site-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 1em 7.5vmin;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  background-image: linear-gradient(to right, #7f00ff, #7f0aaa);
+}
+
+.site-branding {
+  margin: 0;
+}
+
+.button--link {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 0.8em;
+  text-decoration: underline;
+  flex: 0 0 100%;
+  justify-self: flex-start;
+}
+
+label {
+  display: block;
+  color: #fff;
+  font-weight: bold;
+}
+
+.user-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+.l-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logout {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 101;
+}

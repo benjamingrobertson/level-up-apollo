@@ -13,6 +13,7 @@ export default class UserForm extends Component {
     if (user._id) {
       return (
         <button
+          className="logout"
           onClick={() => {
             Meteor.logout();
             client.resetStore();
@@ -24,14 +25,17 @@ export default class UserForm extends Component {
     }
 
     return (
-      <div>
+      <div className="user-form">
         {login ? (
           <LoginForm client={client} />
         ) : (
           <RegisterForm client={client} />
         )}
-        <button onClick={() => this.setState({ login: !login })}>
-          {login ? 'Register' : 'Login'}
+        <button
+          className="button--link"
+          onClick={() => this.setState({ login: !login })}
+        >
+          {login ? 'Create new account' : 'Login'}
         </button>
       </div>
     );
